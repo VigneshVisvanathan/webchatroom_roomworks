@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>webchat</title>
+    <script>
+        var roomName = "<%= roomName %>"
+      </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <link href="/styles.css" rel="stylesheet" type="text/css">
+    <script defer src="webchat.js"></script>
+</head>
+<body>
+    <div id="streamer">
+            
+            <p><button id="start">Stream</button> <button id="stop">Stop</button></p>
+           
+            <video id="video" autoplay controls></video>
+            <canvas id="can1" width="850" height="350"></canvas>
+            <img id="img1">
+    </div>
+    <div id="webchater">
+        <div id="chat-window">
+            <div id="output"></div>
+            <div id="feedback"></div>
+        </div>
+        <input type="text" id="handle" placeholder="Name" readonly>
+        <input type="text" id="message" placeholder="Type Message">
+        <button id="send">Send Message</button>
+    </div>
+    
+</body>
+</html>
