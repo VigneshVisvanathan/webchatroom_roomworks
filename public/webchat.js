@@ -1,4 +1,4 @@
-var socket = io.connect("http://localhost:7000");
+var socket = io.connect("https://webchatroom-roomworks.vercel.app/");
 var message = document.getElementById('message');
 var handle = document.getElementById('handle');
 var btn = document.getElementById('send');
@@ -8,6 +8,8 @@ var bigcontainer = document.getElementById('chat-window');
 var roomContainer=document.getElementById('room-container');
 var c = document.getElementById("can1");
 var remi = document.getElementById("img1");
+var videoElem = document.getElementById("video");
+
 if (output != null) {
     var name = prompt('What is your name?')
 if (name.length == 0) {
@@ -70,9 +72,7 @@ function appendmessage(message) {
 //streaming//streaming
   
 
-var videoElem = document.getElementById("video");
-var startElem = document.getElementById("start");
-var stopElem = document.getElementById("stop");
+
 
 
 
@@ -82,9 +82,10 @@ var displayMediaOptions = {
   },
   audio: false
 };
+var startElem = document.getElementById("start");
+var stopElem = document.getElementById("stop");
 
-
-startElem.addEventListener("click", function(evt) {
+startElem.addEventListener('click',function(evt){
   startCapture();
 }, false);
 
