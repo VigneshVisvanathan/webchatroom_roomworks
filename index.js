@@ -4,7 +4,7 @@ var server=require('http').Server(app)
 var io=require('socket.io')(server);
 
 
-
+var port = process.env.PORT || 3000;
 
 app.set('views','./views')
 app.set('view engine','ejs')
@@ -31,7 +31,7 @@ app.get('/:room',(req,res)=>{
     res.render('room',{roomName:req.params.room})
 })
 console.log(rooms)
-server.listen(7000)
+server.listen(port)
 
 io.on('connection',function(socket){
     
